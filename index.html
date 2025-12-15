@@ -484,9 +484,14 @@ button{
     }
 
     function closeOverlay(){
-      $("overlay").classList.remove("show");
-      $("overlay").setAttribute("aria-hidden", "true");
-      stopConfetti();
+const REVEAL_DELAY_MS = 1000; // 원하는 지연시간(ms)
+
+setTimeout(() => {
+  $("overlay").classList.add("show");
+  $("overlay").setAttribute("aria-hidden", "false");
+  startConfetti(g);
+}, REVEAL_DELAY_MS);
+
     }
 
     function reset(){
