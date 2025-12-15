@@ -153,18 +153,31 @@
 
 .ultra-label{
   position: absolute;
-  left: 16px;   /* ✅ 사진 가장자리와 여백 */
-  top: 16px;    /* ✅ 사진 가장자리와 여백 */
-  padding: 8px 14px;
+  left: 50%;
+  bottom: 14px;                 /* ✅ 이미지 하단에서 여백 */
+  transform: translateX(-50%);  /* ✅ 중앙 정렬 */
+
+  padding: 10px 16px;
   border-radius: 999px;
   background: rgba(0,0,0,0.45);
   color: #fff;
-  font-weight: 900; /* ✅ 더 굵게(bold) */
+  font-weight: 900;
   font-size: 16px;
   letter-spacing: -0.02em;
   z-index: 2;
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,0.25);
+}
+    
+.ultra-wrap::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 42%;
+  background: linear-gradient(to top, rgba(0,0,0,0.40), transparent);
+  pointer-events:none;
+}
+
 }
 
 
