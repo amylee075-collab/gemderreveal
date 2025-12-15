@@ -449,12 +449,8 @@
   <!-- Modal -->
   <div class="overlay" id="overlay">
     <div class="modal" role="dialog" aria-modal="true">
-      <div class="badge">
-        <img id="resultImg" src="./girl.png" alt="결과" />
-      </div>
-      <div class="h2">축하합니다! 🎉</div>
       <p class="p1"><span id="babyNick">흰둥이</span>는</p>
-      <p class="p2" id="genderText">여자아이에요!</p>
+      <p class="p2" id="genderText">여자아이에요!🎉</p>
 
       <div class="note" id="noteText"></div>
 
@@ -543,8 +539,8 @@
     function openModal(){
       const isGirl = CONFIG.gender === "GIRL";
       $("resultImg").src = isGirl ? CONFIG.girlImg : CONFIG.boyImg;
-      $("genderText").textContent = isGirl ? "여자아이에요!" : "남자아이에요!";
-      $("noteText").innerHTML = `${formatDue(CONFIG.dueDate)}에<br/>건강하게 태어날 우리 아기 ❤️`;
+      $("genderText").textContent = isGirl ? "여자아이에요!🎉" : "남자아이에요!🎉";
+      $("noteText").innerHTML = `${formatDue(CONFIG.dueDate)}에<br/>우리 건강하게 만나요 ❤️`;
       $("overlay").classList.add("show");
     }
 
